@@ -91,8 +91,7 @@ export function useNews() {
 export function useDiscussions(matchId?: number) {
   return useQuery({
     queryKey: ["discussions", matchId],
-    queryFn: () => fetchMockDiscussions(matchId),
-    enabled: typeof matchId === "number",
+    queryFn: () => fetchMockDiscussions(matchId?.toString()),
   });
 }
 
